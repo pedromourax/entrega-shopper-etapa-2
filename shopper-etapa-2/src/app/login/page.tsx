@@ -35,7 +35,7 @@ export default function Login() {
             onChange={(e) => setCustomerCode(e.target.value)}
             className="mt-2"
             type="text"
-            placeholder="Digite o seu código"
+            placeholder="Digite o seu customer_code"
           />
           <button
             onClick={handleLogin}
@@ -43,7 +43,11 @@ export default function Login() {
           >
             Entrar
           </button>
-          {error && <div>DEU ERROOOOOO</div>}
+          {error && (
+            <div className="flex w-full items-center justify-center p-3 text-red-600">
+              Dados inválidos
+            </div>
+          )}
         </div>
       </div>
     </div>
