@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./shopper-etapa-1
+    ports:
+      - "3000:3000"
+    networks:
+      - shopper-network
+
+  frontend:
+    build:
+      context: ./shopper-etapa-2
+    ports:
+      - "80:80"
+    networks:
+      - shopper-network
+    depends_on:
+      - backend
+
+networks:
+  shopper-network:
+    driver: bridge
