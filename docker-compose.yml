@@ -12,6 +12,8 @@ services:
       context: ./shopper-etapa-2
     ports:
       - "80:80"
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=http://backend:3000
     networks:
       - shopper-network
     depends_on:
